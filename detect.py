@@ -20,13 +20,13 @@ def setup_gpio():
     GPIO.setup(PIR_PIN, GPIO.IN)
 
 def capture_with_video10():
-    """Capture with OpenCV using video10 device"""
+    """Capture with OpenCV device"""
     try:
         # Open video10 device specifically
         cap = cv2.VideoCapture(CAMERA_INDEX)
         
         if not cap.isOpened():
-            print("Could not open /dev/video10")
+            print("Could not open camera")
             return None, None
         
         # Set camera properties for better performance
